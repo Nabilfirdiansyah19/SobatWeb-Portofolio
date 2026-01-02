@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Bagaimana jika saya ingin ganti harga atau foto produk?",
-    a: "Anda punya jatah 2x update konten gratis tiap bulan. Cukup chat admin, kami yang kerjakan. Atau Anda bisa pakai Admin Dashboard."
+    a: "Anda punya jatah update konten gratis tiap bulan yang akan dilakukan oleh tim kami. Cukup chat admin, kami yang kerjakan. Atau Anda bisa pakai Admin Dashboard untuk melakukan update manual."
   },
   {
   q: "Bagaimana jika saya berhenti berlangganan? Apakah data saya hilang?",
