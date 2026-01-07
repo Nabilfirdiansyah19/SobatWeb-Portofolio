@@ -76,7 +76,7 @@ const Pricing = () => {
             
             <div className="space-y-1 mb-8">
               <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Biaya Setup & Aktivasi:</p>
-              <h4 className="text-2xl font-bold text-gray-400 tracking-tight">Rp 500.000</h4>
+              <h4 className="text-2xl font-bold text-gray-400 tracking-tight">Rp 550.000</h4>
               <div className="h-[1px] bg-white/10 my-4" />
               <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Bulan ke-2 dst:</p>
               <h4 className="text-5xl font-black text-white tracking-tighter">Rp 295.000<span className="text-lg font-normal text-gray-500">/bln</span></h4>
