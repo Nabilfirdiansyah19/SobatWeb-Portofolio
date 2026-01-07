@@ -4,10 +4,16 @@ import { Check, Info, Search } from 'lucide-react';
 
 const Pricing = () => {
   // Fitur dasar yang ada di kedua paket
-  const baseFeatures = [
+  const baseFeaturesA = [
     "Layanan Operasional & Maintenance",
-    "Admin Dashboard Pusat Rekap Data",
+    "Landing Page + Admin Dashboard",
     "Laporan Rekap Database (Excel/bulan)",
+    "Prioritas Support WhatsApp 1x24 Jam"
+  ];
+
+  const baseFeaturesB = [
+    "Layanan Operasional & Maintenance",
+    "Landing Page",
     "Prioritas Support WhatsApp 1x24 Jam"
   ];
 
@@ -51,7 +57,7 @@ const Pricing = () => {
               <li className="flex gap-3 text-cyan-400 text-sm font-bold">
                 <Search size={18} className="shrink-0" /> Setup Google Search Console
               </li>
-              {baseFeatures.map((f, i) => (
+              {baseFeaturesA.map((f, i) => (
                 <li key={i} className="flex gap-3 text-gray-300 text-sm leading-relaxed">
                   <Check size={18} className="text-cyan-500 shrink-0" /> {f}
                 </li>
@@ -86,7 +92,7 @@ const Pricing = () => {
               <li className="flex gap-3 text-gray-300 text-sm font-bold">
                 <Check size={18} className="text-gray-600 shrink-0" /> Jatah Update Konten 1x / Bulan
               </li>
-              {baseFeatures.map((f, i) => (
+              {baseFeaturesB.map((f, i) => (
                 <li key={i} className="flex gap-3 text-gray-500 text-sm leading-relaxed">
                   <Check size={18} className="text-gray-600 shrink-0" /> {f}
                 </li>
