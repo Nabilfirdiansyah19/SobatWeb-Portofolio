@@ -5,7 +5,7 @@ const Stats = () => {
     <div className="bg-black py-10 border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
         {[
-          { label: "Pengerjaan", val: "3-5 Hari" },
+          { label: "Pengerjaan", val: "3-7 Hari" },
           { label: "Biaya Harian", val: "Rp 11rb-an" },
           { label: "Support", val: "24/7 Jam" },
           { label: "Sistem", val: "Terima Beres" },
