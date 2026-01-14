@@ -52,7 +52,7 @@ const Pricing = () => {
 
             <ul className="space-y-4 mb-10">
               <li className="flex gap-3 text-white text-sm font-bold">
-                <Check size={18} className="text-cyan-500 shrink-0" /> Jatah Update Konten 3x / Bulan
+                <Check size={18} className="text-cyan-500 shrink-0" /> Jatah Update Konten 3x 
               </li>
               <li className="flex gap-3 text-cyan-400 text-sm font-bold">
                 <Search size={18} className="shrink-0" /> Setup Google Search Console
@@ -90,7 +90,7 @@ const Pricing = () => {
 
             <ul className="space-y-4 mb-10">
               <li className="flex gap-3 text-gray-300 text-sm font-bold">
-                <Check size={18} className="text-gray-600 shrink-0" /> Jatah Update Konten 1x / Bulan
+                <Check size={18} className="text-gray-600 shrink-0" /> Jatah Update Konten 1x 
               </li>
               {baseFeaturesB.map((f, i) => (
                 <li key={i} className="flex gap-3 text-gray-500 text-sm leading-relaxed">

@@ -5,7 +5,7 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
   {
     q: "Berapa lama website saya jadi?",
-    a: "Website demo biasanya siap dalam 1-2 hari. Setelah deal, website akan online sepenuhnya dalam 3-5 hari kerja."
+    a: "Website demo biasanya siap dalam 1-2 hari. Setelah deal, website akan online sepenuhnya dalam 3-7 hari kerja."
   },
   {
     q: "Apakah saya bisa membatalkan langganan?",
@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Bagaimana jika saya ingin ganti harga atau foto produk?",
-    a: "Anda punya jatah update konten gratis tiap bulan yang akan dilakukan oleh tim kami. Cukup chat admin, kami yang kerjakan. Atau Anda bisa pakai Admin Dashboard untuk melakukan update manual."
+    a: "Anda punya jatah update konten gratis yang akan dilakukan oleh tim kami. Cukup chat admin, kami yang kerjakan. Atau Anda bisa pakai Admin Dashboard untuk melakukan update manual."
   },
   {
   q: "Bagaimana jika saya berhenti berlangganan? Apakah data saya hilang?",
