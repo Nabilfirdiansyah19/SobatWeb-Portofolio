@@ -5,13 +5,15 @@ import coffeeShopImg from '../images/coffeeShop.png';
 import berkahImg from '../images/berkahCatering.png';
 import ranImg from '../images/ranKaroseri.jpeg';
 import undanganImg from '../images/undanganPernikahan.jpeg';
+import suitpalace from '../images/suitpalace.png';
 
 const projects = [
   { id: 1, title: "HotelRes", category: "Booking System", img: hotelResImg },
   { id: 2, title: "Coffee Shop", category: "Food & Beverage", img: coffeeShopImg },
   { id: 3, title: "Berkah Catering", category: "Food & Beverage", img: berkahImg },
   { id: 4, title: "Ran Karoseri", category: "Service", img: ranImg },
-  { id: 5, title: "Undangan Pernikahan", category: "Undangan Digital", img: undanganImg }
+  { id: 5, title: "Undangan Pernikahan", category: "Undangan Digital", img: undanganImg },
+  { id: 6, title: "Suit Palace", category: "Service & Rental", img: suitpalace }
 ];
 
 const Gallery = () => {
