@@ -6,14 +6,18 @@ import berkahImg from '../images/berkahCatering.png';
 import ranImg from '../images/ranKaroseri.jpeg';
 import undanganImg from '../images/undanganPernikahan.jpeg';
 import suitpalace from '../images/suitpalace.png';
+import zyro from '../images/zyro.png';
 
 const projects = [
-  { id: 1, title: "Suit Palace", category: "Service & Rental", img: suitpalace },
-  { id: 2, title: "Berkah Catering", category: "Food & Beverage", img: berkahImg },
-  { id: 3, title: "Ran Karoseri", category: "Service", img: ranImg },
-  { id: 4, title: "Coffee Shop", category: "Food & Beverage", img: coffeeShopImg },
-  { id: 5, title: "Undangan Pernikahan", category: "Undangan Digital", img: undanganImg },
-  { id: 6, title: "HotelRes", category: "Booking System", img: hotelResImg }
+  
+  { id: 1, title: "Zyro Auto Detailing", category: "Car Detailing", img: zyro },
+  { id: 2, title: "Suit Palace", category: "Service & Rental", img: suitpalace },
+  { id: 3, title: "Berkah Catering", category: "Food & Beverage", img: berkahImg },
+  { id: 4, title: "Ran Karoseri", category: "Service", img: ranImg },
+  { id: 5, title: "Coffee Shop", category: "Food & Beverage", img: coffeeShopImg },
+  { id: 6, title: "Undangan Pernikahan", category: "Undangan Digital", img: undanganImg },
+  { id: 7, title: "HotelRes", category: "Booking System", img: hotelResImg },
+
 ];
 
 const Gallery = () => {
@@ -35,7 +39,7 @@ const Gallery = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group relative aspect-4/3 rounded-3xl overflow-hidden bg-gray-900 border border-white/10"
+              className="group relative aspect-[16/10] rounded-3xl overflow-hidden bg-gray-900 border border-white/10"
             >
               <img src={project.img} alt={project.title} className="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:rotate-1" />
               <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-80" />

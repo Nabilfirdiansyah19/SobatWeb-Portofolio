@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Info, Search } from 'lucide-react';
+import { Check, Info, Search,Zap,Code2,ShieldCheck } from 'lucide-react';
 
 const Pricing = () => {
   // Fitur dasar yang ada di kedua paket
@@ -104,6 +104,55 @@ const Pricing = () => {
 
             <a href={`${waLink}B`} className="block w-full text-center border-2 border-white/10 text-white py-4 rounded-2xl font-black text-sm hover:bg-white hover:text-black transition-all uppercase tracking-widest">Pilih Paket B</a>
           </motion.div>
+
+         {/* Paket CUSTOM (Beli Putus vs Langganan) */}
+<motion.div 
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="p-8 rounded-[2.5rem] bg-gradient-to-b from-purple-950/20 to-[#0f0f0f] border border-purple-500/30 hover:border-purple-500/50 transition-all duration-500 h-full flex flex-col"
+>
+  <h3 className="text-2xl font-black text-white mb-2 tracking-tighter uppercase">Paket Custom</h3>
+  <p className="text-purple-400 font-bold mb-8 italic text-sm">Sesuai Kebutuhan Bisnis</p>
+  
+  <div className="grid grid-cols-1 gap-4 mb-8">
+    {/* Highlight Beli Putus */}
+    <div className="relative overflow-hidden bg-purple-500/10 p-5 rounded-2xl border border-purple-500/40">
+      
+      <p className="text-purple-400 text-[10px] font-black uppercase tracking-widest mb-1">Opsi Sekali Bayar</p>
+      <div className="flex items-baseline gap-1">
+        <span className="text-gray-400 text-xs font-bold uppercase">Start</span>
+        <p className="text-white font-black text-2xl tracking-tight">Rp 500.000</p>
+      </div>
+      <p className="text-purple-300/60 text-[10px] font-medium mt-1">Dapatkan Full Source Code</p>
+    </div>
+
+    {/* Opsi Langganan */}
+    <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
+      <p className="text-cyan-400 text-[10px] font-black uppercase tracking-widest mb-1">Opsi Langganan</p>
+      <p className="text-white font-bold text-lg">Harga Sesuai Request</p>
+      <p className="text-gray-500 text-[10px]">Free Maintenance & Server</p>
+    </div>
+  </div>
+
+  <ul className="space-y-4 mb-10 flex-grow">
+    <li className="flex gap-3 text-gray-300 text-sm">
+      <Code2 size={18} className="text-purple-500 shrink-0" /> Full Codingan (Sekali Bayar)
+    </li>
+    <li className="flex gap-3 text-gray-300 text-sm">
+      <ShieldCheck size={18} className="text-cyan-500 shrink-0" /> Managed Maintenance (Langganan)
+    </li>
+    <li className="flex gap-3 text-gray-300 text-sm">
+      <Zap size={18} className="text-yellow-500 shrink-0" /> Fitur Bebas Sesuai Request
+    </li>
+    <li className="flex gap-3 text-gray-300 text-sm italic">
+      <Check size={18} className="text-gray-600 shrink-0" /> Domain & Hosting Custom
+    </li>
+  </ul>
+
+  <a href={`${waLink}Custom`} className="block w-full text-center border-2 border-purple-500 text-purple-400 py-4 rounded-2xl font-black text-sm hover:bg-purple-500 hover:text-white transition-all uppercase tracking-widest">Konsultasi Harga</a>
+</motion.div>
+
         </div>
         
         <div className="mt-16 text-center text-gray-700 text-[10px] font-bold uppercase tracking-[0.2em]">
