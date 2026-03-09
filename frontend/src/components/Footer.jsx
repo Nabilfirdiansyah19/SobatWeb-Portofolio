@@ -37,7 +37,7 @@ const Footer = () => {
                   <MessageSquare size={18} />
                 </div>
                 <div>
-                  <div className="text-[10px] text-gray-600 uppercase font-black tracking-widest">Admin 1 (Titus)</div>
+                  <div className="text-[10px] text-gray-600 uppercase font-black tracking-widest">Admin</div>
                   <div className="text-sm font-bold">+62 878-8808-2449</div>
                 </div>
               </a>
@@ -53,7 +53,7 @@ const Footer = () => {
                   <MessageSquare size={18} />
                 </div>
                 <div>
-                  <div className="text-[10px] text-gray-600 uppercase font-black tracking-widest">Admin 2</div>
+                  <div className="text-[10px] text-gray-600 uppercase font-black tracking-widest">Admin</div>
                   <div className="text-sm font-bold">+62 813-1987-8831</div>
                 </div>
               </a>
