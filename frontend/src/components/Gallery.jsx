@@ -10,7 +10,7 @@ import zyro from '../images/zyro.png';
 import je from '../images/jecreative.png';
 
 const projects = [
-  { id: 1, title: "Je Creaetive", category: "Photography", img: je },
+  { id: 1, title: "Je Creative", category: "Photography", img: je },
   { id: 2, title: "Zyro Auto Detailing", category: "Car Detailing", img: zyro },
   { id: 3, title: "Suit Palace", category: "Service & Rental", img: suitpalace },
   { id: 4, title: "Berkah Catering", category: "Food & Beverage", img: berkahImg },
