@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Transparency from './components/Transparency';
 import FAQ from './components/FAQ';
 import Stats from './components/Stats';
+import Program from './components/Program';
 import { MessageCircle } from 'lucide-react';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Services />
       <Gallery />
       <Pricing />
+      <Program />
       <Transparency />
       <FAQ /> 
       <Footer />

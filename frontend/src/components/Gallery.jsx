@@ -7,16 +7,17 @@ import ranImg from '../images/ranKaroseri.jpeg';
 import undanganImg from '../images/undanganPernikahan.jpeg';
 import suitpalace from '../images/suitpalace.png';
 import zyro from '../images/zyro.png';
+import je from '../images/jecreative.png';
 
 const projects = [
-  
-  { id: 1, title: "Zyro Auto Detailing", category: "Car Detailing", img: zyro },
-  { id: 2, title: "Suit Palace", category: "Service & Rental", img: suitpalace },
-  { id: 3, title: "Berkah Catering", category: "Food & Beverage", img: berkahImg },
-  { id: 4, title: "Ran Karoseri", category: "Service", img: ranImg },
-  { id: 5, title: "Coffee Shop", category: "Food & Beverage", img: coffeeShopImg },
-  { id: 6, title: "Undangan Pernikahan", category: "Undangan Digital", img: undanganImg },
-  { id: 7, title: "HotelRes", category: "Booking System", img: hotelResImg },
+  { id: 1, title: "Je Creaetive", category: "Photography", img: je },
+  { id: 2, title: "Zyro Auto Detailing", category: "Car Detailing", img: zyro },
+  { id: 3, title: "Suit Palace", category: "Service & Rental", img: suitpalace },
+  { id: 4, title: "Berkah Catering", category: "Food & Beverage", img: berkahImg },
+  { id: 5, title: "Ran Karoseri", category: "Service", img: ranImg },
+  { id: 6, title: "Coffee Shop", category: "Food & Beverage", img: coffeeShopImg },
+  { id: 7, title: "Undangan Pernikahan", category: "Undangan Digital", img: undanganImg },
+  { id: 8, title: "HotelRes", category: "Booking System", img: hotelResImg },
 
 ];
 
