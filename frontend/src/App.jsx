@@ -10,6 +10,7 @@ import FAQ from './components/FAQ';
 import Stats from './components/Stats';
 import Program from './components/Program';
 import { MessageCircle } from 'lucide-react';
+import Automation from './components/Automation';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Gallery />
       <Pricing />
       <Program />
+      <Automation />
       <Transparency />
       <FAQ /> 
       <Footer />
