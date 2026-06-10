@@ -7,22 +7,18 @@ import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 import Transparency from './components/Transparency';
 import FAQ from './components/FAQ';
-import Stats from './components/Stats';
-import Program from './components/Program';
+
 import { MessageCircle } from 'lucide-react';
-import Automation from './components/Automation';
+
 
 function App() {
   return (
     <div className="bg-black min-h-screen selection:bg-cyan-500 selection:text-black">
       <Navbar />
       <Hero />
-      <Stats /> 
       <Services />
-      <Gallery />
       <Pricing />
-      <Program />
-      <Automation />
+      <Gallery />
       <Transparency />
       <FAQ /> 
       <Footer />

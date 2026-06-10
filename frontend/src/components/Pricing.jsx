@@ -1,162 +1,209 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Info, Search,Zap,Code2,ShieldCheck } from 'lucide-react';
+import { Check, Info, Globe, Layout, ArrowRight } from 'lucide-react';
 
 const Pricing = () => {
-  // Fitur dasar yang ada di kedua paket
-  const baseFeaturesA = [
-    "Layanan Operasional & Maintenance",
-    "Landing Page + Admin Dashboard",
-    "Laporan Rekap Database (Excel/bulan)",
-    "Prioritas Support WhatsApp 1x24 Jam"
-  ];
+  // State untuk melacak tipe domain yang dipilih di masing-masing paket
+  const [lpDomain, setLpDomain] = useState('com');
+  const [dashDomain, setDashDomain] = useState('com');
 
-  const baseFeaturesB = [
-    "Layanan Operasional & Maintenance",
-    "Landing Page",
-    "Prioritas Support WhatsApp 1x24 Jam"
-  ];
+  const waLink = "https://wa.me/6287888082449?text=";
 
-  const waLink = "https://wa.me/6287888082449?text=Halo%20SobatWeb,%20saya%20tertarik%20langganan%20Paket%20";
+  // Data Paket 1: Landing Page Only
+  const lpPricing = {
+    'myid': { total: 'Rp 650.000', renew: 'Rp 100.000/tahun', label: '.my.id' },
+    'com': { total: 'Rp 980.000', renew: 'Rp 250.000/tahun', label: '.com' },
+    'id': { total: 'Rp 1.050.000', renew: 'Rp 300.000/tahun', label: '.id' }
+  };
+
+  // Data Paket 2: Landing Page + Dashboard
+  const dashPricing = {
+    'myid': { total: 'Rp 2.140.000', renew: 'Rp 540.000/tahun', label: '.my.id' },
+    'com': { total: 'Rp2.270.000', renew: 'Rp 670.000/tahun', label: '.com' },
+    'id': { total: 'Rp2.770.000', renew: 'Rp 770.000/tahun', label: '.id' }
+  };
+
+  const handleOrder = (packageName, domainType) => {
+    const text = `Halo SobatWeb, saya tertarik untuk memesan ${packageName} dengan ekstensi domain ${domainType}.`;
+    window.open(`${waLink}${encodeURIComponent(text)}`, '_blank');
+  };
 
   return (
     <section id="pricing" className="py-32 bg-black px-6">
       <div className="max-w-7xl mx-auto">
+        
+        {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-6 uppercase">Skema Harga</h2>
-          <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 px-4 py-2 rounded-full text-cyan-400 text-sm">
-            <Info size={16} /> Bayar Setup di bulan pertama, selanjutnya cukup iuran bulanan.
+          <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 px-4 py-2 rounded-full text-cyan-400 text-sm font-medium">
+            <Info size={16} className="shrink-0" /> Hak Milik Penuh.
           </div>
-          <p className="text-gray-500 mt-4 text-sm font-medium">Bebas batalkan kapanpun tanpa denda pembatalan.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Paket A - PROFESIONAL */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative p-10 rounded-[2.5rem] bg-gradient-to-b from-cyan-950/30 to-black border-2 border-cyan-500 shadow-[0_0_50px_-12px_rgba(6,182,212,0.3)]"
-          >
-            <div className="absolute -top-5 left-10 bg-cyan-500 text-black px-6 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">Paling Populer</div>
-            <h3 className="text-3xl font-black text-white mb-2 tracking-tighter uppercase">Paket Profesional</h3>
-            <p className="text-cyan-400 font-bold mb-8 italic text-sm">Domain Bisnis .com</p>
-            
-            <div className="space-y-1 mb-8">
-              <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Biaya Setup & Aktivasi:</p>
-              <h4 className="text-2xl font-bold text-white tracking-tight">Rp 900.000</h4>
-              <div className="h-[1px] bg-white/10 my-4" />
-              <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Bulan ke-2 dst:</p>
-              <h4 className="text-5xl font-black text-white tracking-tighter">Rp 350.000<span className="text-lg font-normal text-gray-500">/bln</span></h4>
+        {/* Pricing Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
+          
+          {/* PAKET 1: LANDING PAGE ONLY */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-[#0f0f0f] border border-white/10 flex flex-col justify-between h-full hover:border-white/20 transition-all duration-300">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-white/5 rounded-2xl text-white">
+                  <Layout size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase">Landing Page</h3>
+                  <p className="text-gray-500 text-xs font-bold uppercase tracking-wider">Solusi Branding Standar</p>
+                </div>
+              </div>
+
+              <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+                Cocok untuk company profile, portofolio, atau produk tunggal yang membutuhkan konversi tinggi dan impresi profesional.
+              </p>
+
+              {/* Selector Tipe Domain */}
+              <div className="mb-6">
+                <label className="text-gray-500 text-[10px] uppercase font-black tracking-widest block mb-3">Pilih Ekstensi Domain:</label>
+                <div className="grid grid-cols-3 gap-2 bg-black p-1.5 rounded-xl border border-white/5">
+                  {Object.keys(lpPricing).map((key) => (
+                    <button
+                      key={key}
+                      onClick={() => setLpDomain(key)}
+                      className={`py-2.5 px-3 rounded-lg text-xs font-bold transition-all uppercase tracking-wider ${
+                        lpDomain === key 
+                          ? 'bg-white text-black shadow-lg' 
+                          : 'text-gray-400 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      {lpPricing[key].label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tampilan Harga Dinamis */}
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/5 mb-8">
+                <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest mb-1">Total Biaya :</p>
+                <h4 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-2">
+                  {lpPricing[lpDomain].total}
+                </h4>
+                <div className="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+                  <span className="text-gray-400">Perpanjangan Tahun Berikutnya:</span>
+                  <span className="text-white font-bold">{lpPricing[lpDomain].renew}</span>
+                </div>
+              </div>
+
+              {/* Fitur Utama */}
+              <ul className="space-y-4 mb-8">
+                <li className="flex gap-3 text-gray-300 text-sm font-medium">
+                  <Check size={18} className="text-emerald-500 shrink-0" /> Free Hosting Selamanya
+                </li>
+                <li className="flex gap-3 text-gray-300 text-sm font-medium">
+                  <Check size={18} className="text-emerald-500 shrink-0" /> Free Domain Terpilih (1 Tahun)
+                </li>
+                <li className="flex gap-3 text-gray-300 text-sm">
+                  <Check size={18} className="text-cyan-500 shrink-0" /> Desain Responsif & Mobile-Friendly
+                </li>
+                <li className="flex gap-3 text-gray-300 text-sm">
+                  <Check size={18} className="text-cyan-500 shrink-0" /> Integrasi Tombol WhatsApp Chat
+                </li>
+                <li className="flex gap-3 text-gray-300 text-sm italic text-gray-400">
+                  <Check size={18} className="text-cyan-500 shrink-0" /> Free Interactive FAQ Section
+                </li>
+              </ul>
             </div>
 
-            <ul className="space-y-4 mb-10">
-              <li className="flex gap-3 text-white text-sm font-bold">
-                <Check size={18} className="text-cyan-500 shrink-0" /> Jatah Update Konten 3x 
-              </li>
-              <li className="flex gap-3 text-cyan-400 text-sm font-bold">
-                <Search size={18} className="shrink-0" /> Setup Google Search Console
-              </li>
-              {baseFeaturesA.map((f, i) => (
-                <li key={i} className="flex gap-3 text-gray-300 text-sm leading-relaxed">
-                  <Check size={18} className="text-cyan-500 shrink-0" /> {f}
-                </li>
-              ))}
-              <li className="flex gap-3 text-gray-300 text-sm italic">
-                <Check size={18} className="text-cyan-500 shrink-0" /> Free Interactive FAQ
-              </li>
-            </ul>
+            <button 
+              onClick={() => handleOrder('Landing Page Only', lpPricing[lpDomain].label)}
+              className="w-full flex items-center justify-center gap-2 border-2 border-white/10 text-white py-4 rounded-2xl font-black text-sm hover:bg-white hover:text-black transition-all uppercase tracking-widest mt-4"
+            >
+              Pesan Paket Ini <ArrowRight size={16} />
+            </button>
+          </div>
 
-            <a href={`${waLink}A`} className="block w-full text-center bg-cyan-500 text-black py-4 rounded-2xl font-black text-sm hover:bg-cyan-400 transition-all uppercase tracking-widest">Pilih Paket A</a>
-          </motion.div>
-
-          {/* Paket B - HEMAT */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="p-10 rounded-[2.5rem] bg-[#0f0f0f] border border-white/10 hover:border-white/20 transition-all duration-500"
-          >
-            <h3 className="text-3xl font-black text-white mb-2 tracking-tighter text-gray-300 uppercase">Paket Hemat</h3>
-            <p className="text-gray-500 font-bold mb-8 italic text-sm">Domain .my.id</p>
+          {/* PAKET 2: LANDING PAGE + DASHBOARD */}
+          <div className="relative p-8 md:p-10 rounded-[2.5rem] bg-gradient-to-b from-cyan-950/30 to-black border-2 border-cyan-500 shadow-[0_0_50px_-12px_rgba(6,182,212,0.3)] flex flex-col justify-between h-full">
+            <div className="absolute -top-5 left-10 bg-cyan-500 text-black px-6 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">Paling Direkomendasikan</div>
             
-            <div className="space-y-1 mb-8">
-              <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Biaya Setup & Aktivasi:</p>
-              <h4 className="text-2xl font-bold text-gray-400 tracking-tight">Rp 550.000</h4>
-              <div className="h-[1px] bg-white/10 my-4" />
-              <p className="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Bulan ke-2 dst:</p>
-              <h4 className="text-5xl font-black text-white tracking-tighter">Rp 295.000<span className="text-lg font-normal text-gray-500">/bln</span></h4>
+            <div>
+              <div className="flex items-center gap-3 mb-4 mt-2">
+                <div className="p-3 bg-cyan-500/10 rounded-2xl text-cyan-400 border border-cyan-500/20">
+                  <Globe size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase">Landing Page + Dashboard</h3>
+                  <p className="text-cyan-400 text-xs font-bold uppercase tracking-wider">Sistem Manajemen & Konten</p>
+                </div>
+              </div>
+
+              <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+                Dilengkapi halaman Admin Dashboard dinamis untuk mengelola konten web, rekap data client, database, secara mandiri tanpa coding.
+              </p>
+
+              {/* Selector Tipe Domain */}
+              <div className="mb-6">
+                <label className="text-cyan-400/70 text-[10px] uppercase font-black tracking-widest block mb-3">Pilih Ekstensi Domain:</label>
+                <div className="grid grid-cols-3 gap-2 bg-black p-1.5 rounded-xl border border-cyan-500/20">
+                  {Object.keys(dashPricing).map((key) => (
+                    <button
+                      key={key}
+                      onClick={() => setDashDomain(key)}
+                      className={`py-2.5 px-3 rounded-lg text-xs font-bold transition-all uppercase tracking-wider ${
+                        dashDomain === key 
+                          ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/20' 
+                          : 'text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/5'
+                      }`}
+                    >
+                      {dashPricing[key].label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tampilan Harga Dinamis */}
+              <div className="bg-cyan-950/40 p-6 rounded-2xl border border-cyan-500/20 mb-8">
+                <p className="text-cyan-400/80 text-[10px] uppercase font-bold tracking-widest mb-1">Total Biaya :</p>
+                <h4 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-2">
+                  {dashPricing[dashDomain].total}
+                </h4>
+                <div className="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+                  <span className="text-gray-400">Perpanjangan Tahun Berikutnya:</span>
+                  <span className="text-white font-bold">{dashPricing[dashDomain].renew}</span>
+                </div>
+              </div>
+
+              {/* Fitur Utama */}
+              <ul className="space-y-4 mb-8">
+                <li className="flex gap-3 text-gray-300 text-sm font-semibold text-cyan-300">
+                  <Check size={18} className="text-cyan-400 shrink-0" /> Free Hosting Terintegrasi (1 Tahun)
+                </li>
+                <li className="flex gap-3 text-gray-300 text-sm font-semibold text-cyan-300">
+                  <Check size={18} className="text-cyan-400 shrink-0" /> Free Domain Terpilih (1 Tahun)
+                </li>
+                <li className="flex gap-3 text-gray-300 text-sm">
+                  <Check size={18} className="text-cyan-500 shrink-0" /> Sistem Admin Dashboard Berbasis Web
+                </li>
+                <li className="flex gap-3 text-gray-300 text-sm">
+                  <Check size={18} className="text-cyan-500 shrink-0" /> Backup Data Perbulan
+                </li>
+                <li className="flex gap-3 text-gray-300 text-sm">
+                  <Check size={18} className="text-cyan-500 shrink-0" /> Prioritas Support Penuh SobatWeb
+                </li>
+              </ul>
             </div>
 
-            <ul className="space-y-4 mb-10">
-              <li className="flex gap-3 text-gray-300 text-sm font-bold">
-                <Check size={18} className="text-gray-600 shrink-0" /> Jatah Update Konten 1x 
-              </li>
-              {baseFeaturesB.map((f, i) => (
-                <li key={i} className="flex gap-3 text-gray-500 text-sm leading-relaxed">
-                  <Check size={18} className="text-gray-600 shrink-0" /> {f}
-                </li>
-              ))}
-              <li className="flex gap-3 text-gray-500 text-sm italic">
-                <Check size={18} className="text-gray-600 shrink-0" /> Free Interactive FAQ
-              </li>
-            </ul>
-
-            <a href={`${waLink}B`} className="block w-full text-center border-2 border-white/10 text-white py-4 rounded-2xl font-black text-sm hover:bg-white hover:text-black transition-all uppercase tracking-widest">Pilih Paket B</a>
-          </motion.div>
-
-         {/* Paket CUSTOM (Beli Putus vs Langganan) */}
-<motion.div 
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  className="p-8 rounded-[2.5rem] bg-gradient-to-b from-purple-950/20 to-[#0f0f0f] border border-purple-500/30 hover:border-purple-500/50 transition-all duration-500 h-full flex flex-col"
->
-  <h3 className="text-2xl font-black text-white mb-2 tracking-tighter uppercase">Paket Custom</h3>
-  <p className="text-purple-400 font-bold mb-8 italic text-sm">Sesuai Kebutuhan Bisnis</p>
-  
-  <div className="grid grid-cols-1 gap-4 mb-8">
-    {/* Highlight Beli Putus */}
-    <div className="relative overflow-hidden bg-purple-500/10 p-5 rounded-2xl border border-purple-500/40">
-      
-      <p className="text-purple-400 text-[10px] font-black uppercase tracking-widest mb-1">Opsi Sekali Bayar</p>
-      <div className="flex items-baseline gap-1">
-        <span className="text-gray-400 text-xs font-bold uppercase">Start</span>
-        <p className="text-white font-black text-2xl tracking-tight">Rp 500.000</p>
-      </div>
-      <p className="text-purple-300/60 text-[10px] font-medium mt-1">Dapatkan Full Source Code</p>
-    </div>
-
-    {/* Opsi Langganan */}
-    <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
-      <p className="text-cyan-400 text-[10px] font-black uppercase tracking-widest mb-1">Opsi Langganan</p>
-      <p className="text-white font-bold text-lg">Harga Sesuai Request</p>
-      <p className="text-gray-500 text-[10px]">Free Maintenance & Server</p>
-    </div>
-  </div>
-
-  <ul className="space-y-4 mb-10 flex-grow">
-    <li className="flex gap-3 text-gray-300 text-sm">
-      <Code2 size={18} className="text-purple-500 shrink-0" /> Full Codingan (Sekali Bayar)
-    </li>
-    <li className="flex gap-3 text-gray-300 text-sm">
-      <ShieldCheck size={18} className="text-cyan-500 shrink-0" /> Managed Maintenance (Langganan)
-    </li>
-    <li className="flex gap-3 text-gray-300 text-sm">
-      <Zap size={18} className="text-yellow-500 shrink-0" /> Fitur Bebas Sesuai Request
-    </li>
-    <li className="flex gap-3 text-gray-300 text-sm italic">
-      <Check size={18} className="text-gray-600 shrink-0" /> Domain & Hosting Custom
-    </li>
-  </ul>
-
-  <a href={`${waLink}Custom`} className="block w-full text-center border-2 border-purple-500 text-purple-400 py-4 rounded-2xl font-black text-sm hover:bg-purple-500 hover:text-white transition-all uppercase tracking-widest">Konsultasi Harga</a>
-</motion.div>
+            <button 
+              onClick={() => handleOrder('Landing Page + Dashboard', dashPricing[dashDomain].label)}
+              className="w-full flex items-center justify-center gap-2 bg-cyan-500 text-black py-4 rounded-2xl font-black text-sm hover:bg-cyan-400 transition-all uppercase tracking-widest mt-4 shadow-lg shadow-cyan-500/10"
+            >
+              Pesan Paket Ini <ArrowRight size={16} />
+            </button>
+          </div>
 
         </div>
         
+        {/* Footer info */}
         <div className="mt-16 text-center text-gray-700 text-[10px] font-bold uppercase tracking-[0.2em]">
-          * Maintenance sistem & keamanan dipantau 24/7 oleh tim SobatWeb
+          * seluruh sistem & infrastruktur dimonitor penuh oleh tim SobatWeb
         </div>
       </div>
     </section>

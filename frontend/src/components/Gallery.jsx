@@ -28,7 +28,7 @@ const Gallery = () => {
         <div className="flex justify-between items-end mb-16">
           <div className="text-left">
             <h2 className="text-4xl font-black text-white tracking-tighter">PROJECT SHOWCASE</h2>
-            <p className="text-gray-500 mt-2 font-light text-lg italic">Preview landing page kami.</p>
+            <p className="text-gray-500 mt-2 font-light text-lg italic">Preview project kami.</p>
           </div>
         </div>
 

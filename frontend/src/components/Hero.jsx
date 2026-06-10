@@ -33,8 +33,8 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 1 }}
           className="mt-8 text-gray-400 max-w-xl mx-auto text-lg md:text-xl font-light leading-relaxed"
         >
-          Solusi "Terima Beres" untuk UMKM. Kami buatkan, kami kelola, Anda fokus jualan. Tanpa biaya koding jutaan di depan.
-        </motion.p>
+           Kami membangun aset digital, bukan beban bulanan. Website profesional dengan sistem beli putus untuk UMKM yang ingin naik kelas.
+         </motion.p>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
